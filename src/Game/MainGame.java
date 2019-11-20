@@ -1,6 +1,7 @@
 package Game;
 
-import Entities.*;
+import Entities.Player;
+import Entities.Reticle;
 import Utilities.SoundClip;
 import Utilities.SoundManager;
 import edu.utc.game.*;
@@ -20,7 +21,6 @@ public class MainGame extends Game implements Scene {
     public static final float GRAVITY = 9.8f;
     private boolean gotClick;
     private Reticle marker;
-    private Grid grid;
     private Player player;
     private SoundClip boom;
     private Text time;
@@ -36,13 +36,11 @@ public class MainGame extends Game implements Scene {
         backgroundMusic.loop();
         SoundManager.add(backgroundMusic);
     }
-	
-    public MainGame() {
 
-        initUI(1280,1280,"SceneHW");
+    public MainGame() {
+        initUI(1280,720,"SceneHW");
         GL11.glClearColor(.9f, .9f, .9f, 0f);
         gotClick = false;
-        grid = new Grid();
         player = new Player(new Vector2f(Game.ui.getWidth()/8f, Game.ui.getHeight()/1.5f));
         marker = new Reticle();
         boom = new SoundClip("boom");
@@ -53,8 +51,7 @@ public class MainGame extends Game implements Scene {
         clickCount = 0;
         time = new Text(40,Game.ui.getHeight() - 100, 30, 30, String.valueOf(timePassed));
         clickDisplay = new Text(40, Game.ui.getHeight() - 50, 30, 30, String.valueOf(clickCount));
-        Game.ui.enableMouseCursor(true);
-        Game.ui.showMouseCursor(true);
+        Game.ui.enableMouseCursor(false);
     }
 
     @Override
@@ -77,7 +74,7 @@ public class MainGame extends Game implements Scene {
             SceneManager.pause();
         }
     }
-    
+
     public Scene drawFrame(int delta) {
         GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
         Vector2f coordinates = new Vector2f(Game.ui.getMouseLocation().x, Game.ui.getMouseLocation().y);
@@ -98,7 +95,6 @@ public class MainGame extends Game implements Scene {
         drawUI();
         marker.draw();
         player.draw();
-        grid.draw();
 
         /* End */
         if (clickCount == 10) SceneManager.end();
