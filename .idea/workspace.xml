@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="09821bce-a0de-47f7-9531-72a7480a6746" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/Game/MainGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Game/MainGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/Game/SceneManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Game/SceneManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/MainGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/SceneManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,9 +20,10 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -35,12 +38,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="496" />
+          <entry key="java" value="798" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="496" />
+          <entry key="JAVA" value="798" />
         </counts>
       </usages-collector>
     </session>
@@ -50,16 +53,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/MainGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="278">
+              <caret line="83" column="28" lean-forward="true" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#395#396#0" expanded="true" />
                 <element signature="e#429#430#0" expanded="true" />
-                <element signature="e#1706#1707#0" expanded="true" />
-                <element signature="e#1735#1736#0" expanded="true" />
-                <element signature="e#3309#3310#0" expanded="true" />
-                <element signature="e#3361#3362#0" expanded="true" />
+                <element signature="e#3367#3368#0" expanded="true" />
+                <element signature="e#3419#3420#0" expanded="true" />
+                <element signature="e#3461#3462#0" expanded="true" />
+                <element signature="e#3496#3497#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,17 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/SceneManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="61" column="100" selection-start-line="61" selection-start-column="100" selection-end-line="61" selection-end-column="100" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/utc/game/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <caret line="47" column="100" selection-start-line="47" selection-start-column="100" selection-end-line="47" selection-end-column="100" />
             </state>
           </provider>
         </entry>
@@ -95,7 +89,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/utc/game/SimpleMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
+            <state relative-caret-position="92">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
@@ -112,6 +106,12 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>paus</find>
+      <find>onkeyevent</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -121,12 +121,18 @@
         <option value="$PROJECT_DIR$/src/game/SimpleMenu.java" />
         <option value="$PROJECT_DIR$/src/edu/utc/gane/SimpleMenu.java" />
         <option value="$PROJECT_DIR$/src/Entities/Grid.java" />
-        <option value="$PROJECT_DIR$/src/Game/SceneManager.java" />
         <option value="$PROJECT_DIR$/src/Game/MainGame.java" />
+        <option value="$PROJECT_DIR$/src/Game/SceneManager.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="25" />
     <option name="width" value="800" />
     <option name="height" value="822" />
@@ -136,7 +142,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -154,12 +159,6 @@
               <item name="final_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="final_project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="final_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="final_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="final_project" type="b2602c69:ProjectViewProjectNode" />
@@ -183,10 +182,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574265353635" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574268553372" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -245,7 +245,7 @@
     <frame x="0" y="25" width="1600" height="822" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25675675" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25997427" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -254,7 +254,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3293011" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3293011" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -270,7 +270,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32947233" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -316,6 +316,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/utc/game/SimpleMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/utc/game/Text.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -323,32 +330,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/utc/game/SimpleMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/SceneManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="61" column="100" selection-start-line="61" selection-start-column="100" selection-end-line="61" selection-end-column="100" />
+        <state relative-caret-position="115">
+          <caret line="47" column="100" selection-start-line="47" selection-start-column="100" selection-end-line="47" selection-end-column="100" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/MainGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="278">
+          <caret line="83" column="28" lean-forward="true" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#395#396#0" expanded="true" />
             <element signature="e#429#430#0" expanded="true" />
-            <element signature="e#1706#1707#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
-            <element signature="e#3309#3310#0" expanded="true" />
-            <element signature="e#3361#3362#0" expanded="true" />
+            <element signature="e#3367#3368#0" expanded="true" />
+            <element signature="e#3419#3420#0" expanded="true" />
+            <element signature="e#3461#3462#0" expanded="true" />
+            <element signature="e#3496#3497#0" expanded="true" />
           </folding>
         </state>
       </provider>
