@@ -5,11 +5,11 @@ import edu.utc.game.*;
 
 public class Grid extends GameObject {
 
-    private GameBoard board;
+    //private GameBoard board;
 
     public Grid()
     {
-       this.board = board;
+       //this.board = board;
        this.hitbox.setSize(100, 100);
        this.hitbox.setLocation(Game.ui.getWidth() / 2, Game.ui.getHeight() /2);
        this.setColor(1, 0, 0);

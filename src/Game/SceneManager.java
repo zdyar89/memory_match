@@ -31,6 +31,7 @@ class SceneManager {
 		mainMenu.addItem(new SimpleMenu.SelectableText(20, 20, 20, 20, "Launch Game", 1, 0, 0, 1, 1, 1), game);
 		mainMenu.addItem(new SimpleMenu.SelectableText(20, 60, 20, 20, "Exit", 1, 0, 0, 1, 1, 1), null);
 		mainMenu.select(0);
+
 		SimpleMenu pauseMenu = new SimpleMenu("pMenu");
 		pauseMenu.addItem(new SimpleMenu.SelectableText(20, 20, 20, 20, "Continue", 1, 0, 0, 1, 1, 1), game);
 		pauseMenu.addItem(new SimpleMenu.SelectableText(20, 60, 20, 20, "Main Menu", 0, 1, 0, 1, 1, 1), mainMenu);
@@ -38,15 +39,35 @@ class SceneManager {
 		pauseMenu.addItem(new SimpleMenu.SelectableText(20, 140, 20, 20, String.valueOf(game.clickCount), 1, 1, 0, 1, 1, 1), game);
 		pauseMenu.select(0);
 		changeScene(pauseMenu);
+
+		SimpleMenu gameOver = new SimpleMenu("GameOver");
+		gameOver.addItem(new SimpleMenu.SelectableText(20, 20, 20, 20, "Game Over!", 1, 0, 0, 1, 1, 1), game);
+		gameOver.addItem(new SimpleMenu.SelectableText(20, 140, 20, 20, String.valueOf(game.clickCount), 1, 1, 0, 1, 1, 1), game);
+		//insert number of matches
+		gameOver.addItem(new SimpleMenu.SelectableText(20, 60, 20, 20, "Exit", 1, 0, 0, 1, 1, 1), null);
+		gameOver.select(0);
+		changeScene(gameOver);
+
+		SimpleMenu victory = new SimpleMenu("Victory");
+		victory.addItem(new SimpleMenu.SelectableText(20, 20, 20 ,20, "Congratulations! You Win!", 1, 0, 0, 1, 1, 1), game);
+		victory.addItem(new SimpleMenu.SelectableText(20, 50, 20, 20, String.valueOf(game.timePassed), 1, 1, 0, 1, 1, 1), game);
+		victory.addItem(new SimpleMenu.SelectableText(20, 80, 20 ,20, "Exit", 1, 0, 0, 1, 1, 1), null);
+		victory.select(0);
+		changeScene(victory);
+
 	}
 
-	static void end() {
-		SimpleMenu mainMenu = new SimpleMenu("mMenu");
-		mainMenu.addItem(new SimpleMenu.SelectableText(20, 20, 20, 20, "Launch Game", 1, 0, 0, 1, 1, 1), game);
-		mainMenu.addItem(new SimpleMenu.SelectableText(20, 60, 20, 20, "Exit", 1, 0, 0, 1, 1, 1), null);
-		mainMenu.select(0);
-
-		changeScene(mainMenu);
-		game.gameLoop();
+	static void end()
+	{
+		//add logic in the end method to pick which scene should be used if the player wins or loses
+		SimpleMenu gameOver = new SimpleMenu("GameOver");
+		gameOver.addItem(new SimpleMenu.SelectableText(20, 20, 20, 20, "Game Over!", 1, 0, 0, 1, 1, 1), game);
+		gameOver.addItem(new SimpleMenu.SelectableText(20, 140, 20, 20, String.valueOf(game.clickCount), 1, 1, 0, 1, 1, 1), game);
+		//insert number of matches
+		gameOver.addItem(new SimpleMenu.SelectableText(20, 60, 20, 20, "Exit", 1, 0, 0, 1, 1, 1), null);
+		gameOver.select(0);
+		changeScene(gameOver);
 	}
+
+
 }
