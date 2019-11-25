@@ -1,7 +1,7 @@
 package Game;
 
 import Entities.Player;
-import Entities.Reticle;
+import Entities.*;
 import Utilities.SoundClip;
 import Utilities.SoundManager;
 import edu.utc.game.*;
@@ -21,6 +21,7 @@ public class MainGame extends Game implements Scene {
     public static final float GRAVITY = 9.8f;
     private boolean gotClick;
     //private Reticle marker;
+    private Cell cell;
     private Player player;
     private SoundClip boom;
     private Text clickDisplay;
@@ -41,6 +42,7 @@ public class MainGame extends Game implements Scene {
         gotClick = false;
         player = new Player(new Vector2f(Game.ui.getWidth()/8f, Game.ui.getHeight()/1.5f));
         //marker = new Reticle();
+        cell = new Cell();
         boom = new SoundClip("boom");
         backgroundMusic = new SoundClip("tridentkeep");
         backgroundMusic.loop();
@@ -100,6 +102,8 @@ public class MainGame extends Game implements Scene {
         drawUI();
         //marker.draw();
         player.draw();
+        cell.draw();
+
 
         gotClick = false;
         return this;

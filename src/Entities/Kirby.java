@@ -13,7 +13,9 @@ public class Kirby extends  GameObject{
     private int ypos;
 
     public Kirby(){
+
         this.img = new Texture("res/Textures/kirby.png");
+        this.hitbox.setSize(30, 30);
     }
 
 }

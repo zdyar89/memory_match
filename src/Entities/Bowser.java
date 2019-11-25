@@ -13,6 +13,8 @@ public class Bowser extends GameObject{
     private int yPos;
 
     public Bowser(){
+
         this.img = new Texture("res/Textures/Bowser.png");
+        this.hitbox.setSize(30, 30);
     }
 }

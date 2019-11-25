@@ -9,6 +9,9 @@ public class Egg extends GameObject {
     private int yPos;
 
     public Egg(){
+
         this.img = new Texture("res/Textures/Egg.png");
+        this.hitbox.setSize(30, 30);
+
     }
 }

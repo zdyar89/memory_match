@@ -13,6 +13,8 @@ public class Samus extends GameObject{
     private int yPos;
 
     public Samus(){
+
         this.img = new Texture("res/Textures/Samus.png");
+        this.hitbox.setSize(30, 30);
     }
 }
