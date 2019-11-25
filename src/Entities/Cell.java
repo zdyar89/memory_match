@@ -29,7 +29,7 @@ public class Grid extends GameObject {
     public void draw()
     {
 
-            GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
+            /*GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
             //might need this later
         // GL11.glLoadIdentity();
 
@@ -44,7 +44,7 @@ public class Grid extends GameObject {
                 GL11.glVertex2f(64, 64);
                 GL11.glVertex2f(64, 0);
             }
-            GL11.glEnd();
+            GL11.glEnd();*/
     }
 
 }
@@ -52,10 +52,24 @@ public class Grid extends GameObject {
 class Cell extends GameObject {
 
     private Texture img;
+    prvivate Texture mask;
     private int size = 50;
+    private boolean isSelected();
+     
 
-    public Cell(float r, float g, float b){
+    public Cell(float r, float g, float b, Texture img){
+        this.img = img;
         this.hitbox.setSize(size, size);
         this.setColor(r, g, b);
+        this.isSelected = false;
+    }
+    
+    public void draw(){
+        //may need to change later
+        if(isSelected) img.draw(this);
+        else
+        {
+            mask.draw(this);
+        }
     }
 }
