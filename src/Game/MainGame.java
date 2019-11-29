@@ -22,6 +22,8 @@ public class MainGame extends Game implements Scene {
     private boolean gotClick;
     //private Reticle marker;
     private Cell cell;
+    private Grid grid;
+    private Texture img;
     private Player player;
     private SoundClip boom;
     private Text clickDisplay;
@@ -42,7 +44,9 @@ public class MainGame extends Game implements Scene {
         gotClick = false;
         player = new Player(new Vector2f(Game.ui.getWidth()/8f, Game.ui.getHeight()/1.5f));
         //marker = new Reticle();
-        cell = new Cell();
+        img = new Texture("res/Textures/kirby.png");
+        this.grid = new Grid();
+        this.cell = new Cell(img);
         boom = new SoundClip("boom");
         backgroundMusic = new SoundClip("tridentkeep");
         backgroundMusic.loop();
@@ -95,14 +99,15 @@ public class MainGame extends Game implements Scene {
         updateUI();
         //marker.setLocation(coordinates);
         player.update(delta);
-
+        cell.draw();
+        cell.update(delta);
         timePassed += delta;
 
         /* Draw */
         drawUI();
-        //marker.draw();
         player.draw();
-        cell.draw();
+        grid.draw();
+                // cell.draw();
 
 
         gotClick = false;

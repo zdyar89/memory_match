@@ -1,36 +1,39 @@
 package Entities;
 
-import edu.utc.game.*;
-import org.lwjgl.glfw.*;
-import org.lwjgl.opengl.*;
+import edu.utc.game.Game;
+import edu.utc.game.GameObject;
+import edu.utc.game.Texture;
+import org.lwjgl.opengl.GL11;
 
-import sun.font.GlyphLayout;
+public class Cell extends GameObject {
+
+    private Texture img;
+    private int x;
+    private int y;
+    public boolean isSelected;
 
 
-public class Grid extends GameObject {
+    public Cell(Texture img){
+        this.img = img;
 
-    //private GameBoard board;
-    private Cell[] grid;
-    private int width;
-    private int height;
-    private Egg egg;
-    private Kirby kirby;
-    private Bowser bowser;
-    private Samus samus;
-    public Grid()
-    {
+        this.hitbox.setSize(64, 64);
 
-       this.hitbox.setSize(64, 64);
+        this.isSelected = false;
     }
 
-
-
-    @Override
-    public void draw()
+    public void update(int delta)
     {
+        if(Game.ui.getMouseLocation().x == this.getHitbox().x && Game.ui.getMouseLocation().y == this.getHitbox().y && Game.ui.mouseButtonIsPressed(0) ){
+            this.isSelected = true;
+        }
 
-            /*GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
-            //might need this later
+    }
+
+    public void draw(){
+        //may need to change later
+
+
+        //might need this later
         // GL11.glLoadIdentity();
 
             GL11.glColor3f(.25f, .75f, .5f);
@@ -44,32 +47,7 @@ public class Grid extends GameObject {
                 GL11.glVertex2f(64, 64);
                 GL11.glVertex2f(64, 0);
             }
-            GL11.glEnd();*/
-    }
+            GL11.glEnd();
 
-}
-
-class Cell extends GameObject {
-
-    private Texture img;
-    prvivate Texture mask;
-    private int size = 50;
-    private boolean isSelected();
-     
-
-    public Cell(float r, float g, float b, Texture img){
-        this.img = img;
-        this.hitbox.setSize(size, size);
-        this.setColor(r, g, b);
-        this.isSelected = false;
-    }
-    
-    public void draw(){
-        //may need to change later
-        if(isSelected) img.draw(this);
-        else
-        {
-            mask.draw(this);
-        }
     }
 }
