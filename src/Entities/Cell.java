@@ -6,6 +6,8 @@ import edu.utc.game.Math.Vector2f;
 import edu.utc.game.Texture;
 import org.lwjgl.opengl.GL11;
 
+import java.sql.SQLOutput;
+
 public class Cell extends GameObject {
 
     private Texture img;
@@ -18,7 +20,7 @@ public class Cell extends GameObject {
     public Cell(Texture img, Vector2f pos){
         this.img = img;
         this.pos = pos;
-        this.hitbox.setBounds((int) pos.x, (int) pos.y, 30, 30);
+        this.hitbox.setBounds((int) pos.x, (int) pos.y, 75, 75);
 
         this.isSelected = false;
     }
@@ -36,21 +38,30 @@ public class Cell extends GameObject {
 
     }
 
+    public void selected()
+    {
+        isSelected = true;
+    }
+
     public void draw(){
         //may need to change later
 
 
         //might need this later
         // GL11.glLoadIdentity();
-        
-        if(!isSelected)
+
+
+       if(isSelected)
         {
-            super.setColor(.33f, .22f, .77f);
-            super.draw();
+            img.draw(this);
+            System.out.println("here");
         }
         else
         {
-        img.draw(this);
+            super.setColor(.33f, .22f, .77f);
+            super.draw();
+            System.out.println("here");
+
         }
 
     }
