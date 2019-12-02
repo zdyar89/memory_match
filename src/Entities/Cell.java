@@ -34,25 +34,14 @@ public class Cell extends GameObject {
 
     }
 
-    public void draw(){
+    /*public void draw(){
         //may need to change later
 
 
         //might need this later
         // GL11.glLoadIdentity();
 
-            GL11.glColor3f(.25f, .75f, .5f);
-            //shifts everything down
-            //GL11.glTranslatef(64, 64, 0);
+        img.draw(this);
 
-            GL11.glBegin(GL11.GL_QUADS);
-            {
-                GL11.glVertex2f(0, 0);
-                GL11.glVertex2f(0, 64);
-                GL11.glVertex2f(64, 64);
-                GL11.glVertex2f(64, 0);
-            }
-            GL11.glEnd();
-
-    }
+    }*/
 }
