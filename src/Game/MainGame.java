@@ -55,8 +55,8 @@ public class MainGame extends Game implements Scene {
         timePassed = 0;
         clickCount = 0;
         clickDisplay = new Text(40, Game.ui.getHeight() - 50, 30, 30, String.valueOf(clickCount));
-        Game.ui.enableMouseCursor(true);
-        Game.ui.showMouseCursor(true);
+        Game.ui.enableMouseCursor(false);
+        Game.ui.showMouseCursor(false);
         cells = new java.util.LinkedList<Cell>();
     }
     
