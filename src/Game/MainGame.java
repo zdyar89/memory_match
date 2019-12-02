@@ -20,7 +20,10 @@ public class MainGame extends Game implements Scene {
 
     public static final float GRAVITY = 9.8f;
     private boolean gotClick;
-    private Texture img;
+    private Texture kriby;
+    private Texture egg;
+    private Texture samus;
+    private Texture bowser;
     private Player player;
     private SoundClip boom;
     private Text clickDisplay;
@@ -41,8 +44,10 @@ public class MainGame extends Game implements Scene {
         GL11.glClearColor(.9f, .9f, .9f, 0f);
         gotClick = false;
         player = new Player(new Vector2f(Game.ui.getWidth()/8f, Game.ui.getHeight()/1.5f));
-        //marker = new Reticle();
-        img = new Texture("res/Textures/kirby.png");
+        kirby = new Texture("res/Textures/kirby.png");
+        egg = new Texture("res/Textures/Egg.png");
+        bowser = new Texture("res/Textures/Bowser.png");
+        samus = new Texture("res/Textures/Samus.png");
         boom = new SoundClip("boom");
         backgroundMusic = new SoundClip("tridentkeep");
         backgroundMusic.loop();
