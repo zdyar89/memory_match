@@ -15,7 +15,7 @@ public class Cell extends GameObject {
 
     public Cell(Texture img){
         this.img = img;
-
+        this.hitBox.setBounds((int) or
         //this.hitbox.setSize(64, 64);
 
         this.isSelected = false;
@@ -23,14 +23,13 @@ public class Cell extends GameObject {
     
     public void setLocation(int x, int y)
     {
-        this.hitbox.setBounds(x,y,64,64);   
+        //not sure if needed
+       // this.hitbox.setBounds(x,y,64,64);   
     }
 
     public void update(int delta)
     {
-        //f(Game.ui.getMouseLocation().x == this.getHitbox().x && Game.ui.getMouseLocation().y == this.getHitbox().y && Game.ui.mouseButtonIsPressed(0) ){
-           // this.isSelected = true;
-        //}
+       
 
     }
 
@@ -40,7 +39,7 @@ public class Cell extends GameObject {
 
         //might need this later
         // GL11.glLoadIdentity();
-
+        
         img.draw(this);
 
     }*/
