@@ -20,9 +20,6 @@ public class MainGame extends Game implements Scene {
 
     public static final float GRAVITY = 9.8f;
     private boolean gotClick;
-    //private Reticle marker;
-    private Cell cell;
-    private Grid grid;
     private Texture img;
     private Player player;
     private SoundClip boom;
