@@ -30,6 +30,7 @@ public class MainGame extends Game implements Scene {
     public long timePassed;
     public long clickCount;
     public SoundClip backgroundMusic;
+    public List<Cell> cells;
 
     public void reset() {
         clickCount = 0;
@@ -45,8 +46,6 @@ public class MainGame extends Game implements Scene {
         player = new Player(new Vector2f(Game.ui.getWidth()/8f, Game.ui.getHeight()/1.5f));
         //marker = new Reticle();
         img = new Texture("res/Textures/kirby.png");
-        this.grid = new Grid();
-        this.cell = new Cell(img);
         boom = new SoundClip("boom");
         backgroundMusic = new SoundClip("tridentkeep");
         backgroundMusic.loop();
@@ -56,6 +55,7 @@ public class MainGame extends Game implements Scene {
         clickDisplay = new Text(40, Game.ui.getHeight() - 50, 30, 30, String.valueOf(clickCount));
         Game.ui.enableMouseCursor(true);
         Game.ui.showMouseCursor(true);
+        cells = new java.util.LinkedList<Cell>();
     }
 
     @Override
@@ -90,6 +90,17 @@ public class MainGame extends Game implements Scene {
         GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
         Vector2f coordinates = new Vector2f(Game.ui.getMouseLocation().x, Game.ui.getMouseLocation().y);
 
+        Cell test1 = new Cell;
+        test1.setLocation(350, 350);
+        test1.setColor(.33, .21, .75);
+        cells.add(test1);
+        
+        //not sure we need the draw loop
+        for(GameObject c: cells)
+        {
+            
+        }
+        
         if (gotClick) {
             boom.play();
             clickCount++;
@@ -99,15 +110,13 @@ public class MainGame extends Game implements Scene {
         updateUI();
         //marker.setLocation(coordinates);
         player.update(delta);
-        cell.draw();
-        cell.update(delta);
+        
         timePassed += delta;
 
         /* Draw */
         drawUI();
         player.draw();
-        grid.draw();
-                // cell.draw();
+        
 
 
         gotClick = false;
