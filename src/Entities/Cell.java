@@ -16,16 +16,21 @@ public class Cell extends GameObject {
     public Cell(Texture img){
         this.img = img;
 
-        this.hitbox.setSize(64, 64);
+        //this.hitbox.setSize(64, 64);
 
         this.isSelected = false;
+    }
+    
+    public void setLocation(int x, int y)
+    {
+        this.hitbox.setBounds(x,y,64,64);   
     }
 
     public void update(int delta)
     {
-        if(Game.ui.getMouseLocation().x == this.getHitbox().x && Game.ui.getMouseLocation().y == this.getHitbox().y && Game.ui.mouseButtonIsPressed(0) ){
-            this.isSelected = true;
-        }
+        //f(Game.ui.getMouseLocation().x == this.getHitbox().x && Game.ui.getMouseLocation().y == this.getHitbox().y && Game.ui.mouseButtonIsPressed(0) ){
+           // this.isSelected = true;
+        //}
 
     }
 
