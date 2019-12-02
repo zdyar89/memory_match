@@ -20,7 +20,7 @@ public class MainGame extends Game implements Scene {
 
     public static final float GRAVITY = 9.8f;
     private boolean gotClick;
-    private Texture kriby;
+    private Texture kirby;
     private Texture egg;
     private Texture samus;
     private Texture bowser;
@@ -55,8 +55,8 @@ public class MainGame extends Game implements Scene {
         timePassed = 0;
         clickCount = 0;
         clickDisplay = new Text(40, Game.ui.getHeight() - 50, 30, 30, String.valueOf(clickCount));
-        Game.ui.enableMouseCursor(false);
-        Game.ui.showMouseCursor(false);
+        Game.ui.enableMouseCursor(true);
+        Game.ui.showMouseCursor(true);
         cells = new java.util.LinkedList<Cell>();
     }
     
@@ -70,7 +70,7 @@ public class MainGame extends Game implements Scene {
             }
             */
      }
-    }
+
 
     @Override
     public String getName() {
@@ -104,16 +104,18 @@ public class MainGame extends Game implements Scene {
         GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
         Vector2f coordinates = new Vector2f(Game.ui.getMouseLocation().x, Game.ui.getMouseLocation().y);
 
-        Cell test1 = new Cell;
-        test1.setLocation(350, 350);
-        test1.setColor(.33, .21, .75);
-        cells.add(test1);
+        Cell test1 = new Cell(kirby, new Vector2f(350f, 350f));
+        //test1.setLocation(350, 350);
+        //test1.setColor(.33f, .21f, .75f);
+        //cells.add(test1);
         
         //not sure we need the draw loop
-        for(GameObject c: cells)
+        /*for(GameObject c: cells)
         {
-            
-        }
+            c.draw();
+        }*/
+
+        test1.draw();
         
         if (gotClick) {
             boom.play();

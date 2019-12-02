@@ -2,6 +2,7 @@ package Entities;
 
 import edu.utc.game.Game;
 import edu.utc.game.GameObject;
+import edu.utc.game.Math.Vector2f;
 import edu.utc.game.Texture;
 import org.lwjgl.opengl.GL11;
 
@@ -35,7 +36,7 @@ public class Cell extends GameObject {
 
     }
 
-    /*public void draw(){
+    public void draw(){
         //may need to change later
 
 
@@ -52,5 +53,5 @@ public class Cell extends GameObject {
         img.draw(this);
         }
 
-    }*/
+    }
 }
