@@ -59,6 +59,18 @@ public class MainGame extends Game implements Scene {
         Game.ui.showMouseCursor(true);
         cells = new java.util.LinkedList<Cell>();
     }
+    
+    public void createGrid(){
+     
+        /*for(int i = 0; i <=7 ; i++)
+        {
+            for(int j = 0; j <=7; j++)
+            {
+                
+            }
+            */
+     }
+    }
 
     @Override
     public String getName() {
