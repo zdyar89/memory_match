@@ -24,6 +24,16 @@ public class Cell extends GameObject {
 
         this.isSelected = false;
     }
+
+    public Texture getTexture()
+    {
+        return this.img;
+    }
+
+    public Vector2f getVector()
+    {
+        return this.pos;
+    }
     
     public void setLocation(int x, int y)
     {
@@ -43,6 +53,11 @@ public class Cell extends GameObject {
         isSelected = true;
     }
 
+    public void reset(){
+        super.setColor(.33f, .22f, .77f);
+        super.draw();
+    }
+
     public void draw(){
         //may need to change later
 
@@ -54,13 +69,13 @@ public class Cell extends GameObject {
        if(isSelected)
         {
             img.draw(this);
-            System.out.println("here");
+           // System.out.println("here");
         }
         else
         {
             super.setColor(.33f, .22f, .77f);
             super.draw();
-            System.out.println("here");
+           // System.out.println("here");
 
         }
 
