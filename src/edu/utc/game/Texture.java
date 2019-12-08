@@ -84,7 +84,7 @@ public class Texture {
         GL11.glBindTexture(GL11.GL_TEXTURE_2D,  0);
 	}
 
-	public void draw(Rectangle object)
+	/*public void draw(Rectangle object)
 	{
 
 		GL11.glColor3f(1,1,1);
@@ -111,6 +111,6 @@ public class Texture {
 		GL11.glEnd();
 
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D,  0);
-	}
+	}*/
 
 }

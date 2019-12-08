@@ -40,26 +40,91 @@ public class MainGame extends Game implements Scene {
     public void setRandom(List<Cell> inputA)
     {
         ArrayList<Vector2f> grid = new ArrayList<>();
+        //1st row
+        grid.add(new Vector2f(250, 50));
+        grid.add(new Vector2f(350, 50));
+        grid.add(new Vector2f(450, 50));
+        grid.add(new Vector2f(550, 50));
+        grid.add(new Vector2f(650, 50));
+        grid.add(new Vector2f(750, 50));
+        grid.add(new Vector2f(850, 50));
+        grid.add(new Vector2f(150, 50));
+
+        //2nd row
+        grid.add(new Vector2f(150, 150));
+        grid.add(new Vector2f(250, 150));
+        grid.add(new Vector2f(350, 150));
+        grid.add(new Vector2f(450, 150));
+        grid.add(new Vector2f(550, 150));
+        grid.add(new Vector2f(650, 150));
+        grid.add(new Vector2f(750, 150));
+        grid.add(new Vector2f(850, 150));
+
+        //3rd row
+        grid.add(new Vector2f(150, 250));
+        grid.add(new Vector2f(250, 250));
+        grid.add(new Vector2f(350, 250));
+        grid.add(new Vector2f(450, 250));
+        grid.add(new Vector2f(550, 250));
+        grid.add(new Vector2f(650, 250));
+        grid.add(new Vector2f(750, 250));
+        grid.add(new Vector2f(850, 250));
+
+        //4th row
+        grid.add(new Vector2f(150, 350));
+        grid.add(new Vector2f(250, 350));
         grid.add(new Vector2f(350, 350));
         grid.add(new Vector2f(450, 350));
         grid.add(new Vector2f(550, 350));
-        grid.add( new Vector2f(650, 350));
+        grid.add(new Vector2f(650, 350));
         grid.add(new Vector2f(750, 350));
-        grid.add( new Vector2f(850, 350));
+        grid.add(new Vector2f(850, 350));
+
+        //5th row
+        grid.add(new Vector2f(150, 450));
+        grid.add(new Vector2f(250, 450));
+        grid.add(new Vector2f(350, 450));
+        grid.add(new Vector2f(450, 450));
+        grid.add(new Vector2f(550, 450));
+        grid.add(new Vector2f(650, 450));
+        grid.add(new Vector2f(750, 450));
+        grid.add(new Vector2f(850, 450));
+
+        //6th row
+        grid.add(new Vector2f(150, 550));
+        grid.add(new Vector2f(250, 550));
+        grid.add(new Vector2f(350, 550));
+        grid.add(new Vector2f(450, 550));
+        grid.add(new Vector2f(550, 550));
+        grid.add(new Vector2f(650, 550));
+        grid.add(new Vector2f(750, 550));
+        grid.add(new Vector2f(850, 550));
         Collections.shuffle(grid);
 
-        Cell test1 = new Cell(bowser, grid.get(0));
-        inputA.add(test1);
-        Cell test2 = new Cell(kirby, grid.get(1));
-        inputA.add(test2);
-        Cell test3 = new Cell(kirby, grid.get(2));
-        inputA.add(test3);
-        Cell test4 = new Cell(kirby, grid.get(3));
-        inputA.add(test4);
-        Cell test5 = new Cell(egg, grid.get(4));
-        inputA.add(test5);
-        Cell test6 = new Cell(samus, grid.get(5));
-        inputA.add(test6);
+
+        for(int i = 0; i <= 47; i++)
+        {
+            if( i < 12)
+            {
+                Cell bow = new Cell(bowser, grid.get(i));
+                inputA.add(bow);
+            }
+            else if(i >= 12 && i < 24)
+            {
+                Cell kir = new Cell(kirby, grid.get(i));
+                inputA.add(kir);
+            }
+            else if(i >= 24 && i < 36)
+            {
+                Cell eg = new Cell(egg, grid.get(i));
+                inputA.add(eg);
+            }
+            else if(i >= 36)
+            {
+                Cell sam = new Cell(samus, grid.get(i));
+                inputA.add(sam);
+            }
+        }
 
 
     }
@@ -68,16 +133,16 @@ public class MainGame extends Game implements Scene {
         backgroundMusic = new SoundClip("tridentkeep");
         backgroundMusic.loop();
         SoundManager.add(backgroundMusic);
-        //setRandom(cells, );
+        setRandom(cells);
     }
 
     public MainGame() {
 
 
-        initUI(1280,720,"SceneHW");
+        initUI(1100,720,"SceneHW");
         cellCache = new ArrayList<>();
         matches = 0;
-        GL11.glClearColor(.9f, .9f, .9f, 0f);
+        GL11.glClearColor(.35f, .22f, .69f, 0f);
         gotClick = false;
         player = new Player(new Vector2f(Game.ui.getWidth()/8f, Game.ui.getHeight()/1.5f));
         marker = new Reticle();
@@ -98,21 +163,6 @@ public class MainGame extends Game implements Scene {
         Game.ui.showMouseCursor(false);
         cells = new java.util.LinkedList<Cell>();
         setRandom(cells);
-        /*Cell test1 = new Cell(bowser, new Vector2f(350, 350));
-        cells.add(test1);
-        Cell test2 = new Cell(kirby, new Vector2f(450, 350));
-        cells.add(test2);
-        Cell test3 = new Cell(kirby, new Vector2f(550, 350));
-        cells.add(test3);
-        Cell test4 = new Cell(kirby, new Vector2f(650, 350));
-        cells.add(test4);
-        Cell test5 = new Cell(egg, new Vector2f(750, 350));
-        cells.add(test5);
-        Cell test6 = new Cell(samus, new Vector2f(850, 350));
-        cells.add(test6);*/
-        //setRandomizer(cells, grid);
-
-
     }
 
 
@@ -127,10 +177,8 @@ public class MainGame extends Game implements Scene {
         clickCount = 0;
         timePassed = 0;
         miniTimer = 0;
-        for(Cell c: this.cells)
-        {
-            c.deselect();
-        }
+        cells = new java.util.LinkedList<Cell>();
+        //setRandom(cells);
 
     }
 
@@ -141,10 +189,9 @@ public class MainGame extends Game implements Scene {
             Vector2f lastClick = new Vector2f(Game.ui.getMouseLocation().x, Game.ui.getMouseLocation().y);
             gotClick = true;
         }
-        if(clickCount >= 5 || matches == cells.size() / 2)
+        if(matches == cells.size() / 2)
         {
             SceneManager.victory();
-            System.out.println("Here");
         }
     }
 
@@ -159,7 +206,7 @@ public class MainGame extends Game implements Scene {
 
     public void time(int delta)
     {
-        if(timePassed > 6000)
+        if(timePassed > 9850)
         {
             for(Cell c: this.cells)
             {
@@ -183,12 +230,11 @@ public class MainGame extends Game implements Scene {
                 cellCache.get(0).deactivate();
                 cellCache.remove(0);
                 cellCache.remove(0);
-                //cellCache = new ArrayList<>();
                 System.out.println("Match Found");
                 match = true;
             } else {
 
-                if (miniTimer >= 3000) {
+                if (miniTimer >= 2000) {
                     cellCache.get(0).deselect();
                     cellCache.get(1).deselect();
                     cellCache.remove(0);
@@ -199,9 +245,10 @@ public class MainGame extends Game implements Scene {
             if (match) {
                 matches++;
                 clickCount = 0;
+                match = false;
             }
 
-            match = false;
+
         }
     }
 
@@ -215,7 +262,7 @@ public class MainGame extends Game implements Scene {
 
         marker.setLocation(coordinates);
         timePassed += delta;
-        if(timePassed < 7000)
+        if(timePassed < 10000)
         {
             time(delta);
         }
