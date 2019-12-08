@@ -25,6 +25,9 @@ public class Cell extends GameObject {
         this.isSelected = false;
     }
 
+    public void deselect(){
+        this.isSelected = false;
+    }
     public Texture getTexture()
     {
         return this.img;

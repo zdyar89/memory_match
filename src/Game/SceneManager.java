@@ -7,13 +7,13 @@ import edu.utc.game.SimpleMenu;
 import static Game.MainGame.game;
 import static Game.MainGame.main;
 
+
 class SceneManager {
 
 	static void run() {
 		game = new MainGame();
 		game.registerGlobalCallbacks();
 		SimpleMenu mainMenu = new SimpleMenu("mMenu");
-
 		mainMenu.addItem(new SimpleMenu.SelectableText(20, 20, 20, 20, "Welcome to Character Match!", 1, 0, 0, 1, 1, 1), null);
 		mainMenu.addItem(new SimpleMenu.SelectableText(20, 40, 20, 20, "Launch Game", 1, 0, 0, 1, 1, 1), game);
 		mainMenu.addItem(new SimpleMenu.SelectableText(20, 60, 20, 20, "Exit", 1, 0, 0, 1, 1, 1), null);
@@ -39,7 +39,7 @@ class SceneManager {
 
 	}
 
-	static void end()
+	static void victory()
 	{
 
 		//add logic in the end method to pick which scene should be used if the player wins or loses
@@ -51,14 +51,21 @@ class SceneManager {
 		gameOver.select(0);
 		//changeScene(gameOver);
 
+		SimpleMenu mainMenu = new SimpleMenu("mMenu");
+		mainMenu.addItem(new SimpleMenu.SelectableText(20, 20, 20, 20, "Welcome to Character Match!", 1, 0, 0, 1, 1, 1), null);
+		mainMenu.addItem(new SimpleMenu.SelectableText(20, 40, 20, 20, "Launch Game", 1, 0, 0, 1, 1, 1), game);
+		mainMenu.addItem(new SimpleMenu.SelectableText(20, 60, 20, 20, "Exit", 1, 0, 0, 1, 1, 1), null);
+		mainMenu.select(0);
+		game.resetGame();
+
+
 		SimpleMenu victory = new SimpleMenu("Victory");
 		victory.addItem(new SimpleMenu.SelectableText(20, 20, 20 ,20, "Congratulations! You Win!", 1, 0, 0, 1, 1, 1), game);
-		victory.addItem(new SimpleMenu.SelectableText(20, 50, 20, 20, "You completed all the matches!", 1, 1, 0, 1, 1, 1), game);
+		victory.addItem(new SimpleMenu.SelectableText(20, 50, 20, 20, "Return to Main Menu", 1, 1, 0, 1, 1, 1), mainMenu);
 		victory.addItem(new SimpleMenu.SelectableText(20, 80, 20 ,20, "Exit", 1, 0, 0, 1, 1, 1), null);
 		victory.select(0);
-		//changeScene(victory);
 
-		if(game.clickCount >= 10) changeScene(victory);
+		changeScene(victory);
 	}
 
 
