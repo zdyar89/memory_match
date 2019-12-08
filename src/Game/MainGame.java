@@ -194,7 +194,7 @@ public class MainGame extends Game implements Scene {
             Vector2f lastClick = new Vector2f(Game.ui.getMouseLocation().x, Game.ui.getMouseLocation().y);
             gotClick = true;
         }
-        if(matches == cells.size() / 2)
+        if(clickCount >= 10 || matches == cells.size() / 2)
         {
             SceneManager.victory();
         }
@@ -340,7 +340,7 @@ public class MainGame extends Game implements Scene {
 
     private void updateUI() {
 
-        clickDisplay = new Text(40,Game.ui.getHeight() - 50, 30, 30, "Points: " + String.valueOf(clickCount));
+        clickDisplay = new Text(40,Game.ui.getHeight() - 50, 30, 30, "Clicks: " + String.valueOf(clickCount));
         matchesDisplay = new Text(40, Game.ui.getHeight() - 70, 30, 30, "Matches: " + String.valueOf(matches));
 
     }

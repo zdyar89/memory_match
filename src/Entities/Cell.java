@@ -76,7 +76,7 @@ public class Cell extends GameObject {
         }
         else
         {
-            super.setColor(.33f, .22f, .77f);
+            super.setColor(.31f, .52f, .87f);
             super.draw();
            // System.out.println("here");
 
