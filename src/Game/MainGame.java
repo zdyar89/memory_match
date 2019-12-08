@@ -1,6 +1,8 @@
 package Game;
 import Entities.*;
 import Utilities.*;
+import VFX.Background;
+import VFX.Wallpaper;
 import edu.utc.game.*;
 import edu.utc.game.Math.Vector2f;
 import org.lwjgl.glfw.GLFW;
@@ -24,6 +26,7 @@ public class MainGame extends Game implements Scene {
     private Texture egg;
     private Texture samus;
     private Texture bowser;
+    private GameBG background;
     private Player player;
     private SoundClip boom;
     private Text clickDisplay;
@@ -140,12 +143,14 @@ public class MainGame extends Game implements Scene {
 
 
         initUI(1100,720,"SceneHW");
+
         cellCache = new ArrayList<>();
         matches = 0;
         GL11.glClearColor(.35f, .22f, .69f, 0f);
         gotClick = false;
         player = new Player(new Vector2f(Game.ui.getWidth()/8f, Game.ui.getHeight()/1.5f));
         marker = new Reticle();
+        background = new GameBG();
         kirby = new Texture("res/Textures/kirby.png");
         egg = new Texture("res/Textures/Egg.png");
         bowser = new Texture("res/Textures/Bowser.png");
@@ -206,7 +211,7 @@ public class MainGame extends Game implements Scene {
 
     public void time(int delta)
     {
-        if(timePassed > 9850)
+        if(timePassed > 9750)
         {
             for(Cell c: this.cells)
             {
@@ -234,7 +239,7 @@ public class MainGame extends Game implements Scene {
                 match = true;
             } else {
 
-                if (miniTimer >= 2000) {
+                if (miniTimer >= 1250) {
                     cellCache.get(0).deselect();
                     cellCache.get(1).deselect();
                     cellCache.remove(0);
@@ -244,7 +249,6 @@ public class MainGame extends Game implements Scene {
             }
             if (match) {
                 matches++;
-                clickCount = 0;
                 match = false;
             }
 
@@ -257,8 +261,9 @@ public class MainGame extends Game implements Scene {
     public Scene drawFrame(int delta) {
         GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
         Vector2f coordinates = new Vector2f(Game.ui.getMouseLocation().x, Game.ui.getMouseLocation().y);
-
+        background.draw();
         manageCache(delta);
+
 
         marker.setLocation(coordinates);
         timePassed += delta;
@@ -310,6 +315,7 @@ public class MainGame extends Game implements Scene {
         player.update(delta);
         /* Draw */
         drawUI();
+
         marker.draw();
 
         gotClick = false;
@@ -334,8 +340,8 @@ public class MainGame extends Game implements Scene {
 
     private void updateUI() {
 
-        clickDisplay = new Text(40,Game.ui.getHeight() - 50, 30, 30, String.valueOf(clickCount));
-        matchesDisplay = new Text(40, Game.ui.getHeight() - 70, 30, 30, String.valueOf(matches));
+        clickDisplay = new Text(40,Game.ui.getHeight() - 50, 30, 30, "Points: " + String.valueOf(clickCount));
+        matchesDisplay = new Text(40, Game.ui.getHeight() - 70, 30, 30, "Matches: " + String.valueOf(matches));
 
     }
 

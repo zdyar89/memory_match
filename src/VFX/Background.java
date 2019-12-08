@@ -15,7 +15,7 @@ public class Background implements Scene {
 	public Background(Scene mainMenu) {
 		GL11.glClearColor(0f, 0f, 0f, 0f);
 		SoundManager.stop();
-		background = new Texture("res/Textures/kirby.png");
+		background = new Texture("res/Textures/menu.png");
 		music = new SoundClip("endOrchestra");
 		SoundManager.add(music);
 		one = new Wallpaper(0, Game.ui.getHeight()/2, Game.ui.getWidth(), Game.ui.getHeight() / 2);
@@ -24,7 +24,6 @@ public class Background implements Scene {
 		menu.addItem(new SimpleMenu.SelectableText(20, 60, 20, 20, "Main Menu", 1, 0, 0, 1, 1, 1), mainMenu);
 		menu.addItem(new SimpleMenu.SelectableText(20, 100, 20, 20, "Exit Game", 0, 0, 1, 1, 1, 1), null);
 		menu.addItem(new SimpleMenu.SelectableText(200, 60, 20, 20, "Clicks: " + game.clickCount, 1, 0, 1, 1, 1, 1), null);
-		menu.addItem(new SimpleMenu.SelectableText(200, 100, 20, 20, "Seconds passed: " + ((game.timePassed / 1000) % 60), 0, 1, 1, 1, 1, 1), null);
 	}
 
 	public String getName() {
