@@ -179,7 +179,7 @@ public class MainGame extends Game implements Scene {
     public void resetGame(){
 
         matches = 0;
-        clickCount = 0;
+        //clickCount = 0;
         timePassed = 0;
         miniTimer = 0;
         cells = new java.util.LinkedList<Cell>();
@@ -194,7 +194,7 @@ public class MainGame extends Game implements Scene {
             Vector2f lastClick = new Vector2f(Game.ui.getMouseLocation().x, Game.ui.getMouseLocation().y);
             gotClick = true;
         }
-        if(clickCount >= 10 || matches == cells.size() / 2)
+        if(matches >= 24)
         {
             SceneManager.victory();
         }
