@@ -27,8 +27,8 @@ public class MainGame extends Game implements Scene {
     private Texture samus;
     private Texture bowser;
     private GameBG background;
-    private Player player;
-    private SoundClip boom;
+    private SoundClip flip;
+    private SoundClip point;
     private Text clickDisplay;
     private Text matchesDisplay;
     public long timePassed;
@@ -141,26 +141,29 @@ public class MainGame extends Game implements Scene {
 
     public MainGame() {
 
-
         initUI(1100,720,"SceneHW");
-
         cellCache = new ArrayList<>();
         matches = 0;
         GL11.glClearColor(.35f, .22f, .69f, 0f);
         gotClick = false;
-        player = new Player(new Vector2f(Game.ui.getWidth()/8f, Game.ui.getHeight()/1.5f));
         marker = new Reticle();
         background = new GameBG();
+
+        //textures for cells
         kirby = new Texture("res/Textures/kirby.png");
         egg = new Texture("res/Textures/Egg.png");
         bowser = new Texture("res/Textures/Bowser.png");
         samus = new Texture("res/Textures/Samus.png");
-        boom = new SoundClip("boom");
+
+        //audio assets
+        flip = new SoundClip("flip");
+        point = new SoundClip("point");
         backgroundMusic = new SoundClip("tridentkeep");
         backgroundMusic.loop();
         SoundManager.add(backgroundMusic);
-        timePassed = 0;
 
+        //accessory game object items
+        timePassed = 0;
         clickCount = 0;
         clickDisplay = new Text(40, Game.ui.getHeight() - 50, 30, 30, String.valueOf(clickCount));
         matchesDisplay = new Text(40, Game.ui.getHeight() - 70, 30, 30, String.valueOf(matches));
@@ -249,6 +252,7 @@ public class MainGame extends Game implements Scene {
             }
             if (match) {
                 matches++;
+                point.play();
                 match = false;
             }
 
@@ -283,8 +287,6 @@ public class MainGame extends Game implements Scene {
             c.update(delta);
         }
 
-
-
         if (gotClick) {
             for(Cell c: cells)
             {
@@ -293,18 +295,12 @@ public class MainGame extends Game implements Scene {
                 {
                     if(!c.isSelected)
                     {
-
                         c.selected();
                         cellCache.add(c);
                     }
-                    else
-                    {
-
-                    }
-                    break;
                 }
             }
-            boom.play();
+            flip.play();
             clickCount++;
         }
 
@@ -312,12 +308,9 @@ public class MainGame extends Game implements Scene {
         updateUI();
         timePassed += delta;
 
-        player.update(delta);
         /* Draw */
         drawUI();
-
         marker.draw();
-
         gotClick = false;
         return this;
     }
