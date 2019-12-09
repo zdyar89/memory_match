@@ -1,6 +1,7 @@
 package edu.utc.game;
 
 import Utilities.SoundManager;
+import Game.GameBG;
 
 import java.util.LinkedList;
 
@@ -126,7 +127,10 @@ public class SimpleMenu implements Scene {
 	{
 		glClearColor(.0f, .0f, .0f, .0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
-
+		
+		GameBG background = new GameBG();
+		background.draw();
+		
 		if (go) {
 			if (items.get(selected).scene.getName().equals("mMenu")) {
 				game.reset();
