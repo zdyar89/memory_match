@@ -1,2 +1,2 @@
-# final_project
-Intro to Video Game Dev final project
+# Memory Match
+Java game project to utilizing LWJGL game library.
